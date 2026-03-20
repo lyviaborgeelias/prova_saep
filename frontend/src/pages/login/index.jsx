@@ -1,6 +1,6 @@
 // src/pages/login/index.jsx
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./styles.css";
 
@@ -18,38 +18,17 @@ export default function Login() {
     setLoading(true);
 
     try {
-      // 1) Login e pega o token JWT
-      const response = await axios.post("http://127.0.0.1:8000/admin/", {
+      const response = await axios.post("http://127.0.0.1:8000/api/token/", {
         username: user,
         password: password,
       });
 
       const access = response.data.access;
-      
-      // Salva o token
+
       localStorage.setItem("token", access);
 
-      // 2) Busca os dados do usuário logado
-      const me = await axios.get("http://127.0.0.1:8000/admin/", {
-        headers: { Authorization: `Bearer ${access}` },
-      });
+      window.location.href = "/admin/home";
 
-      const { is_superuser, is_staff, is_active } = me.data;
-
-      // 3) Se usuário estiver inativo, bloqueia
-      if (!is_active) {
-        localStorage.removeItem("token");
-        setMessage("Usuário inativo. Contate o administrador.");
-        setLoading(false);
-        return;
-      }
-
-      // 4) Redirecionamento por perfil
-      if (is_staff) {
-        navigate("/admin/home/");
-      } else {
-        navigate("/user/home/");
-      }
     } catch (error) {
       console.log("Error: ", error);
       localStorage.removeItem("token");
@@ -58,6 +37,7 @@ export default function Login() {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="loginPage">
@@ -96,27 +76,7 @@ export default function Login() {
           <button className="btnPrimary" type="submit" disabled={loading}>
             {loading ? "Entrando..." : "Entrar"}
           </button>
-
-          <div className="divider">
-            <span>ou</span>
-          </div>
-
-          <div className="footerActions">
-            <p className="footerText">
-              Ainda não tem conta?{" "}
-              <Link className="link" to="/register">
-                Cadastre-se
-              </Link>
-            </p>
-          </div>
         </form>
-
-        <div className="loginFooter">
-          <p>
-            © {new Date().getFullYear()} • Desenvolvido por{" "}
-            <strong>Lindomar José Batistão</strong>
-          </p>
-        </div>
       </div>
     </div>
   );
