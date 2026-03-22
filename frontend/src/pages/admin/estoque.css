@@ -1,0 +1,77 @@
+.estoque-grid-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr; /* 400px para o form, o resto para a tabela */
+    gap: 30px;
+    padding: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.card-estoque {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Estilo da Tabela */
+.estoque-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.estoque-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #f1f5f9;
+    color: #64748b;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.estoque-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 15px;
+}
+
+.text-right { text-align: right; }
+.font-bold { font-weight: 600; }
+.text-red { color: #ef4444; }
+
+/* Badges de Status */
+.badge-success {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Reutilizando estilos de input anteriores */
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+.input-group input, .input-group select {
+    width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc;
+}
+
+.btn-registrar {
+    width: 100%; padding: 14px; background: #020617; color: white; 
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}

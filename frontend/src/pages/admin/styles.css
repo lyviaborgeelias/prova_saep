@@ -1,0 +1,181 @@
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --blue: #2563eb;
+  --green: #10b981;
+  --border-radius: 12px;
+}
+
+/* 1. RESET GLOBAL: Remove margens padrão e define a cor no nível mais alto */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color); /* Garante que o fundo seja essa cor */
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+}
+
+/* 2. CONTAINER: Ocupa no mínimo a altura da janela inteira */
+.dashboard-container {
+  padding: 40px;
+  min-height: 100vh; /* Garante 100% da altura da Viewport */
+  width: 100%;
+  background-color: var(--bg-color); 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  background: var(--blue);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  font-size: 24px;
+}
+
+.brand h1 { margin: 0; font-size: 22px; font-weight: 700; }
+.brand span { color: var(--text-sub); font-size: 14px; }
+
+/* Menu de Usuário */
+.user-menu {
+  display: flex;
+  gap: 12px;
+}
+
+.user-info {
+  background: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+.logout-button {
+  border: 1px solid #e2e8f0;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background: #f1f5f9;
+}
+
+/* Grid de Ações - Ocupando o centro */
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o conteúdo se a tela for muito larga */
+}
+
+.action-card {
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.action-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.action-icon {
+  padding: 14px;
+  border-radius: 12px;
+  color: white;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue-bg { background: var(--blue); }
+.green-bg { background: var(--green); }
+
+.action-card h3 { 
+  margin: 0; 
+  font-size: 20px; 
+  font-weight: 600;
+}
+
+.action-card p { 
+  margin: 4px 0; 
+  color: var(--text-sub); 
+  font-size: 15px; 
+}
+
+/* Lista de funcionalidades */
+.action-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1; /* Empurra o botão para o final do card */
+}
+
+.action-card li {
+  color: var(--text-sub);
+  margin-bottom: 12px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.action-card li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.action-card:first-child li::before { background-color: var(--blue); }
+.action-card:last-child li::before { background-color: var(--green); }
+
+.btn-access {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-access.dark { background: #0f172a; color: white; }
+.btn-access.green { background: var(--green); color: white; }
+.btn-access:hover { opacity: 0.9; }

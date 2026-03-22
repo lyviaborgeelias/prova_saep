@@ -1,0 +1,97 @@
+.produtos-page {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Header */
+.page-header {
+  background: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header-left { display: flex; align-items: center; gap: 20px; }
+
+.back-btn {
+  background: none; border: 1px solid #e2e8f0;
+  padding: 8px; border-radius: 8px; cursor: pointer; display: flex;
+}
+
+.header-title { display: flex; align-items: center; gap: 12px; }
+.header-icon { 
+  background: #2563eb; color: white; padding: 10px; border-radius: 8px; font-size: 20px;
+}
+.header-title h1 { font-size: 20px; margin: 0; }
+.header-title span { color: #64748b; font-size: 14px; }
+
+.add-btn {
+  background: #020617; color: white; border: none; padding: 10px 20px;
+  border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 600;
+}
+
+/* Tabela */
+.content-container { padding: 40px; }
+
+.table-card {
+  background: white; border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 24px;
+}
+
+.table-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;
+}
+
+.search-bar {
+  display: flex; align-items: center; background: #f1f5f9;
+  padding: 8px 16px; border-radius: 8px; width: 300px; gap: 10px;
+}
+.search-bar input { background: none; border: none; outline: none; width: 100%; }
+
+.custom-table { width: 100%; border-collapse: collapse; }
+.custom-table th { 
+  text-align: left; padding: 12px; border-bottom: 2px solid #f1f5f9; 
+  color: #64748b; font-size: 14px; font-weight: 600;
+}
+.custom-table td { padding: 16px 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+
+.sku-cell { color: #64748b; font-family: monospace; }
+.name-cell { font-weight: 700; color: #1e293b; }
+
+.stock-warning { color: #f59e0b; font-weight: 700; display: flex; align-items: center; gap: 5px; }
+
+.actions-cell { display: flex; gap: 15px; }
+.edit-icon { color: #64748b; background: none; border: none; cursor: pointer; font-size: 18px; }
+.delete-icon { color: #ef4444; background: none; border: none; cursor: pointer; font-size: 18px; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center; z-index: 1000;
+}
+
+.modal-content {
+  background: white; width: 600px; border-radius: 12px; padding: 32px; position: relative;
+}
+
+.modal-header { display: flex; justify-content: space-between; margin-bottom: 24px; }
+.modal-header h2 { margin: 0; font-size: 22px; }
+.modal-header p { color: #64748b; margin: 4px 0; }
+.close-modal { background: none; border: none; font-size: 24px; cursor: pointer; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.full { grid-column: span 2; }
+
+.input-group { display: flex; flex-direction: column; gap: 8px; }
+.input-group label { font-size: 14px; font-weight: 600; }
+.input-group input { 
+  padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; background: #f8fafc;
+}
+
+.modal-footer {
+  margin-top: 32px; display: flex; justify-content: flex-end; gap: 12px;
+}
+.btn-cancel { background: none; border: 1px solid #e2e8f0; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
+.btn-submit { background: #020617; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
